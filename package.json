@@ -1,0 +1,22 @@
+{
+  "name": "constructor-word-guess",
+  "version": "1.0.0",
+  "description": "Word Guess command-line game using constructor functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MalinkaMell/Constructor-Word-Guess.git"
+  },
+  "author": "Irina K.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MalinkaMell/Constructor-Word-Guess/issues"
+  },
+  "homepage": "https://github.com/MalinkaMell/Constructor-Word-Guess#readme",
+  "dependencies": {
+    "inquirer": "^7.0.0"
+  }
+}
