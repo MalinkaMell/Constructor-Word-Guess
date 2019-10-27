@@ -14,7 +14,7 @@ class Letter {
     showLetter() {
         if (this.guessed === true) {
             this.display = this.letter;
-            console.log(">letter.js :: showLetter :: " + this.display);
+           // console.log(">letter.js :: showLetter :: " + this.display);
         }
     }
     //A function that takes a character as an argument and checks it against the underlying character, 
@@ -22,7 +22,7 @@ class Letter {
     checkChar(char) {
         if (char === this.letter) {
             this.guessed = true;
-            console.log(">letter.js :: checkChar :: " + this.guessed);
+           // console.log(">letter.js :: checkChar :: " + this.guessed);
         }
     }
 

@@ -1,5 +1,4 @@
 let Letter = require("./letter");
-let inquirer = require("inquirer");
 
 class Word {
     constructor(word) {
@@ -25,7 +24,7 @@ class Word {
         this.arr.forEach(element => {
            //return element.checkChar(char);
            element.checkChar(char);
-           console.log(element);
+           //console.log(element);
            
         }); 
         
@@ -33,12 +32,14 @@ class Word {
 
 }
 
-const x = new Word("hey");
-//console.log(x);
-console.log(x.checkString("h"));
+module.exports = Word;
+
+//const x = new Word("hey");
+//console.log(x); 
+/* console.log(x.checkString("h"));
 console.log(x.wordString());
 console.log(x.checkString("y"));
-console.log(x.wordString());
+console.log(x.wordString());  */
 /* Contains a constructor, Word that depends on the Letter constructor. 
 This is used to create an object representing the current word the user is attempting to guess. 
 That means the constructor should define:
