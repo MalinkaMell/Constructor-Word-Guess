@@ -1,15 +1,32 @@
 let inquirer = require("inquirer");
 let Word = require("./word");
+let colors = require('colors');
 
 //array of words objects - 'cause I always have to complicate things, huh? :D
 let arrayOfWords = [
     {
         name: "brand new day",
-        hint: "ryan star song"
+        hint: "Ryan Star Song"
     },
     {
         name: "minority report",
-        hint: "Steven Spielberg movie"
+        hint: "2002's Steven Spielberg Movie"
+    },
+    {
+        name: "sheldon cooper",
+        hint: "Bazinga!"
+    },
+    {
+        name: "tom marvolo riddle",
+        hint: "Lord Voldemort"
+    },
+    {
+        name: "hey",
+        hint: "short word"
+    },
+    {
+        name: "cheshire cat",
+        hint: "We Are All Mad Here!"
     }];
 
 let arrLength = Object.keys(arrayOfWords).length; //finding the length of array by counting object keys
@@ -20,6 +37,8 @@ let wordToGuess = new Word(arrayOfWords[wordIndex].name); //word to guess
 
 let count = 0; //counting guesses
 let userGuesses = 3; //setting number of guesses
+
+let guessedWords = 0;
 
 //this is the core game
 function showWord() {
@@ -37,33 +56,45 @@ function showWord() {
                 let guessed = answers.letter;
                 wordToGuess.checkString(guessed);
                 wordToGuess.wordString();
+                count++;
+                console.log("\n");
+                console.log("Guesses used " + count + "/" + userGuesses);
+                console.log("\n");
                 //checking if word is complete yet
                 function checkWord(el) {
                     return (el.guessed === true);
                 }
                 //and if complete, congrats the user 
                 if (wordToGuess.arr.every(checkWord) === true) {
-                    console.log("congrats!");
+                    console.log("Congrats! You've got it right!".brightYellow);
+                    guessedWords++;
                     wordIndex++;
-                    console.log(wordIndex);
-                    //startWord();
-                    return; // and stop everything
+                    if (wordIndex < arrLength) {
+                        nextWord();
+                    }
+                    else {
+                        console.log("\n");
+                        console.log("Game Over! You have guessed ".brightYellow + guessedWords.brightRed + "/" + arrLength.brightGreen 
+                        + "words!".brightYellow);
+                        console.log("\n");
+                    }
+                    return;
                 }
-                count++;
-                console.log("\n");
-                console.log("Guesses used " + count + "/" + userGuesses);
-                console.log("\n");
+                
                 showWord();
                 // console.log("\n");
             })
 
     } else {
-        console.log("You are out of guesses");
+        console.log("You are out of guesses!".brightRed);
 
         wordIndex++;
-        console.log(wordIndex);
         if (wordIndex < arrLength) {
             nextWord();
+        } else {
+            console.log("\n");
+            console.log(("Game Over! You have guessed " + guessedWords + "/" + arrLength + " words!").green);
+            console.log("\n");
         }
     }
 
@@ -71,9 +102,10 @@ function showWord() {
 }
 
 function startWord() {
-    console.log("\n=== GUESS THE WORD GAME ===");
+    console.log("\n=== GUESS THE WORD GAME ===".brightGreen);
+    console.log("============================".brightGreen);
     console.log("\n");
-    console.log("HINT: " + arrayOfWords[wordIndex].hint);
+    console.log("HINT: ".brightGreen + arrayOfWords[wordIndex].hint.brightYellow);
     console.log("\n");
     wordToGuess.wordString();
     console.log("\n");
@@ -81,11 +113,12 @@ function startWord() {
 }
 
 function nextWord() {
-    count = 0;
-    wordToGuess = new Word(arrayOfWords[wordIndex].name); //word to guess
-    console.log("\n=== GUESS THE WORD GAME NEXT ===");
+    
+    wordToGuess = new Word(arrayOfWords[wordIndex].name); //next word to guess
+    count = 0; // setting count to 0, restarting guesses
+    console.log("\n===        NEXT WORD        ===".brightGreen);
     console.log("\n");
-    console.log("HINT: " + arrayOfWords[wordIndex].hint);
+    console.log("HINT: ".brightGreen + arrayOfWords[wordIndex].hint.brightYellow);
     console.log("\n");
     wordToGuess.wordString();
     console.log("\n");
