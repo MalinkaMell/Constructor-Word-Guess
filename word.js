@@ -14,9 +14,10 @@ class Word {
         this.arr.forEach(element => {
             element.showLetter();
         });
-
-        this.arr.map(e => e.display).join(",");
-        console.log(this.arr.map(e => e.display).join(" "));
+        
+       let myString = this.arr.map(e => e.display.charAt(0).toUpperCase() + e.display.slice(1)).join(" ");
+      
+        console.log(myString);
     }
     //A function that takes a character as an argument and calls the guess function on each letter object 
     //(the second function defined in Letter.js)

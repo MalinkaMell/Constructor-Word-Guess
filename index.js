@@ -52,9 +52,20 @@ function showWord() {
                 }
             ])
             .then(function (answers) {
-                let guessed = answers.letter;
+                let guessed = answers.letter.toLowerCase();
+
+                if (wordToGuess.word.includes(guessed)) {
+                    console.log("\n");  //new line
+                    console.log("CORRECT".brightGreen);
+
+                } else {
+                    console.log("\n");  //new line
+                    console.log("INCORRECT".brightRed);
+                }
+
                 console.log("\n");  //new line
                 wordToGuess.checkString(guessed); //checking if we have that letter
+
                 wordToGuess.wordString(); //re-building the word array
                 count++; //increasing guesses
                 console.log("\n"); //new line
@@ -89,7 +100,7 @@ function showWord() {
 
         console.log("You are out of guesses!".brightRed); // finished ou guesses
         wordIndex++; // increasing index in order to show next word
-         //checking if we still have word to guess
+        //checking if we still have word to guess
         if (wordIndex < arrLength) {
             //showing next word if we do
             nextWord();

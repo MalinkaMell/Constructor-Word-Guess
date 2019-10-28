@@ -19,7 +19,6 @@ class Letter {
     showLetter() {
         if (this.guessed === true) {
             this.display = this.letter;
-            
            // console.log(">letter.js :: showLetter :: " + this.display);
         }
     }
