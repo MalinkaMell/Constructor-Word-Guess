@@ -8,12 +8,18 @@ class Letter {
         this.guessed = false; //A boolean value that stores whether that letter has been guessed yet
         this.display = "_"; // placeholder
         this.letter = letter; //A string value to store the underlying character for the letter
+
+        if (this.letter === " ") { // if there is a space, show space
+            this.guessed = true;
+            this.display = " ";
+        }
     }
     //A function that returns the underlying character if the letter has been guessed, 
     //or a placeholder (like an underscore) if the letter has not been guessed
     showLetter() {
         if (this.guessed === true) {
             this.display = this.letter;
+            
            // console.log(">letter.js :: showLetter :: " + this.display);
         }
     }
@@ -22,6 +28,7 @@ class Letter {
     checkChar(char) {
         if (char === this.letter) {
             this.guessed = true;
+            
            // console.log(">letter.js :: checkChar :: " + this.guessed);
         }
     }
