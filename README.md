@@ -2,6 +2,10 @@
 
 In this unit's assignment, you will create a Word Guess command-line game using constructor functions.
 
+### Bonuses achieved:
+
+* using array of objects containing HINT and WORD TO GUESS instead of array of words
+
 ### Instructions
 
 The completed game should meet the following criteria:
@@ -28,3 +32,5 @@ The completed game should meet the following criteria:
 * Word.js should only require Letter.js
 * **HINT**: Write Letter.js first and test it on its own before moving on, then do the same thing with Word.js
 * **HINT**: If you name your letter's display function toString, JavaScript will call that function automatically whenever casting that object to a string (check out this example: https://jsbin.com/facawetume/edit?js,console)
+
+_Made for U of A Bootcamp, Week-11, October 2019_

@@ -36,6 +36,7 @@ let wordToGuess = new Word(arrayOfWords[wordIndex].name); //word to guess
 let count = 0; //counting guesses
 let userGuesses = 3; //setting number of guesses
 let guessedWords = 0;
+let guessedLetters = [];
 
 
 /* ==========   FUNCTIONS  ========== */
@@ -67,7 +68,14 @@ function showWord() {
                 wordToGuess.checkString(guessed); //checking if we have that letter
 
                 wordToGuess.wordString(); //re-building the word array
-                count++; //increasing guesses
+                console.log(guessedLetters);
+
+                //in order to NOT subtract a count from user if he guesses the same letter
+                if (!guessedLetters.includes(guessed)) {
+                    guessedLetters.push(guessed); // check in my array if letter is there, push if it's not, and increase counter
+                    count++;
+                }
+
                 console.log("\n"); //new line
                 console.log("Guesses used " + count + "/" + userGuesses);  //guesses used (i like it better than remaining guesses)
                 console.log("\n"); //new line

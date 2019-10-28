@@ -1,3 +1,2 @@
 - ask ts about uppercase word -18
-- manage same letter - don't subtract guess
-- one letter at the time
+- one letter at the time - is it possible with inquirer?
