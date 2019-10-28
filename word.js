@@ -24,7 +24,6 @@ class Word {
         this.arr.forEach(element => {
             //return element.checkChar(char);
             element.checkChar(char);
-
         });
 
     }
