@@ -1,4 +1,6 @@
 let Letter = require("./letter");
+let {spaced} = require('letter-spacing');
+
 
 class Word {
     constructor(word) {
@@ -14,10 +16,19 @@ class Word {
         this.arr.forEach(element => {
             element.showLetter();
         });
-        
-       let myString = this.arr.map(e => e.display.charAt(0).toUpperCase() + e.display.slice(1)).join(" ");
-      
-        console.log(myString);
+
+        //so the problem was joining with space on 22, once removed the space everything worked like a charm
+        //for nicer look going to use 'letter-spacing' library
+        let newArr = this.arr
+            .map(element => element.display) //create new array
+            .join("") //tranform to string
+            .toLowerCase() //to lower case just to be sure it's all lower
+            .split(" ") // split it in words
+            .map((element) => element.charAt(0).toUpperCase() + element.substring(1)) //add words to new array, 
+            //and capitalize the first letter of EVERY word 
+            .join(" "); // transform to string again
+
+        console.log(spaced(newArr, 2));
     }
     //A function that takes a character as an argument and calls the guess function on each letter object 
     //(the second function defined in Letter.js)

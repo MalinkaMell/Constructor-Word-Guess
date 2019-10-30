@@ -4,7 +4,7 @@ In this unit's assignment, you will create a Word Guess command-line game using 
 
 ### Bonuses achieved:
 
-* using array of objects containing HINT and WORD TO GUESS instead of array of words
+* using array of word objects containing HINT and WORD TO GUESS instead of array of words
 
 ### Instructions
 

@@ -1,2 +1,0 @@
-- ask ts about uppercase word -18
-- one letter at the time - is it possible with inquirer?

@@ -1,4 +1,7 @@
 let inquirer = require("inquirer");
+let MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
+inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt); // only allow 1 letter
+
 let Word = require("./word");
 let colors = require('colors');
 
@@ -34,7 +37,7 @@ let arrLength = Object.keys(arrayOfWords).length; //finding the length of array 
 let wordIndex = 0; //starting with word at index 0
 let wordToGuess = new Word(arrayOfWords[wordIndex].name); //word to guess
 let count = 0; //counting guesses
-let userGuesses = 3; //setting number of guesses
+let userGuesses = 15; //setting number of guesses
 let guessedWords = 0;
 let guessedLetters = [];
 
@@ -48,8 +51,9 @@ function showWord() {
             .prompt([
                 {
                     name: "letter",
-                    type: "input",
-                    message: "Guess a letter"
+                    type: "maxlength-input",
+                    message: "Guess a letter",
+                    maxLength: 1
                 }
             ])
             .then(function (answers) {
@@ -68,7 +72,6 @@ function showWord() {
                 wordToGuess.checkString(guessed); //checking if we have that letter
 
                 wordToGuess.wordString(); //re-building the word array
-                console.log(guessedLetters);
 
                 //in order to NOT subtract a count from user if he guesses the same letter
                 if (!guessedLetters.includes(guessed)) {
@@ -136,7 +139,7 @@ function startWord() {
 
 //proceeding with the game
 function nextWord() {
-
+    guessedLetters = [];
     wordToGuess = new Word(arrayOfWords[wordIndex].name); //next word to guess
     count = 0; // setting count to 0, restarting guesses
     console.log("\n===   +++  NEXT WORD  +++   ===".brightGreen);
