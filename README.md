@@ -6,7 +6,6 @@ In this unit's assignment, you will create a Word Guess command-line game using 
 
 * using array of word objects containing HINT and WORD TO GUESS instead of array of words
 
-[Clik here for video demo of the project](https://youtu.be/ZjHlaBjDAC8)
 
 ### Instructions
 
@@ -36,29 +35,33 @@ The completed game should meet the following criteria:
 * **HINT**: If you name your letter's display function toString, JavaScript will call that function automatically whenever casting that object to a string (check out this example: https://jsbin.com/facawetume/edit?js,console)
 
 
+[Clik here for video demo of the project](https://youtu.be/ZjHlaBjDAC8)
+
 ### Screenshots demo
 
-![index.js](assets/images/1.jpg)
 
 #### Starting the game 
+![index.js](assets/images/1.jpg)
 
-![index.js](assets/images/2.jpg)
 
 #### Guessing our letters, notice every new word is capitalized
+![index.js](assets/images/2.jpg)
 
-![index.js](assets/images/3.jpg)
 
 #### We guessed the word, moving on next
+![index.js](assets/images/3.jpg)
 
-![index.js](assets/images/4.jpg)
 
 #### Out of guesses, moving on next word
+![index.js](assets/images/4.jpg)
 
-![index.js](assets/images/5.jpg)
 
 #### Trying to insert more than one letter
+![index.js](assets/images/5.jpg)
 
-![index.js](assets/images/6.jpg)
 
 #### Game over, show guessed words count
+![index.js](assets/images/6.jpg)
+
+
 _Made for U of A Bootcamp, Week-11, October 2019_
