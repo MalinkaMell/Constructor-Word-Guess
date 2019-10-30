@@ -1,8 +1,7 @@
 let inquirer = require("inquirer");
 let MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
 inquirer.registerPrompt("maxlength-input", MaxLengthInputPrompt); // only allow 1 letter
-
-let Word = require("./word");
+let Word = require("./word"); // my word constructor
 let colors = require('colors');
 
 /* ==========   VARIABLES ========== */
