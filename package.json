@@ -19,7 +19,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "inquirer": "^7.0.0",
-    "inquirer-maxlength-input-prompt": "^1.0.0",
+    "inquirer-maxlength-input-prompt": "^1.0.2",
     "letter-spacing": "^1.0.13"
   }
 }
